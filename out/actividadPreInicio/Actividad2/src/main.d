@@ -1,6 +1,6 @@
 actividadPreInicio/Actividad2/out/actividadPreInicio/Actividad2/src/main.o: \
  actividadPreInicio/Actividad2/src/main.c \
- actividadPreInicio/Actividad2/inc/main.h \
+ actividadPreInicio/Actividad2/src/../inc/main.h \
  libs/sapi/sapi_v0.6.2/base/inc/sapi.h \
  libs/sapi/sapi_v0.6.2/base/inc/sapi_datatypes.h \
  libs/lpc_open/lpc_chip_43xx/inc/chip.h \
@@ -128,4 +128,6 @@ actividadPreInicio/Actividad2/out/actividadPreInicio/Actividad2/src/main.o: \
  libs/sapi/sapi_v0.6.2/external_peripherals/pressure_temperature/bmp280/inc/sapi_bmp280.h \
  libs/sapi/sapi_v0.6.2/external_peripherals/pressure_temperature/bmp280/inc/bmp280.h \
  libs/sapi/sapi_v0.6.2/external_peripherals/pressure_temperature/bmp280/inc/bmp280_defs.h \
- libs/sapi/sapi_v0.6.2/external_peripherals/mcp23017/inc/mcp23017.h
+ libs/sapi/sapi_v0.6.2/external_peripherals/mcp23017/inc/mcp23017.h \
+ actividadPreInicio/Actividad2/inc/teclas.h \
+ actividadPreInicio/Actividad2/inc/secuencias.h

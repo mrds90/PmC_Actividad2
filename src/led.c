@@ -24,12 +24,7 @@
  */
 #define apagarLed(led) gpioWrite(led, 0)
 
-/**
- * @brief Apaga todos los leds
- * 
- * @return bool_t 
- */
-static bool_t apagarLeds(void) {
+bool_t apagarLeds(void) {
 	bool_t no_error;
 	uint8_t i;
 	for (i = LEDR ; i <= LED3 ; i++) {

@@ -13,6 +13,7 @@
 
 #include <stdint.h>
 #include <stddef.h>
+#include "sapi.h"
 
 
 /*=====[C++ - begin]=========================================================*/
@@ -30,10 +31,24 @@ extern "C" {
  * @param tecla gpioMap_t
  * @return bool_t (true si tecla apretada)
  */
-bool leerTecla(gpioMap_t tecla);
-
+ bool leerTecla(gpioMap_t tecla);
+/**
+ * @brief Devuleve la tecla recien presionada (solo por flanco)
+ * 
+ * @return gpioMap_t 
+ */
+gpioMap_t TeclaValida(void);
 /*=====[Definitions of public data types]====================================*/
+/**
+ * @brief Indice de flags que habilitan las teclas
+ * 
+ */
+typedef enum {
+   CAMBIAR_SECUENCIA,
+   CAMBIAR_VELOCIDAD,
 
+   FLAGS_QTY
+} flag_tecla_t;
 /*=====[Prototypes (declarations) of public functions]=======================*/
 
 /*=====[Prototypes (declarations) of public interrupt functions]=============*/
