@@ -10,18 +10,40 @@
 #include "sapi.h"
 #include "secuencias.h"
 
+/**
+ * @brief leo el estado de la tecla
+ * 
+ * @param tecla gpioMap_t
+ * @return bool_t (true si tecla apretada)
+ */
+static bool leerTecla(gpioMap_t tecla);
+/**
+ * @brief Devuleve la tecla recien presionada (solo por flanco)
+ * 
+ * @return gpioMap_t 
+ */
+static gpioMap_t teclaValida(void);
+/**
+ * @brief Interpretar Tecla evalua cual es la tecla presionada y configura la secuencia.
+ * 
+ */
+
 /*=====[Definition macros of private constants]==============================*/
 #define PERIODO_1S              1000 
 #define PERIODO_500MS           500 
 #define PERIODO_2S              2000 
 #define PERIODO_3S              3000
+
+
 /*=====[Definitions of private global variables]=============================*/
 
 static uint16_t times[DEMORAS_QTY] = {PERIODO_1S, PERIODO_500MS, PERIODO_2S, PERIODO_3S};
 static gpioMap_t secuencia1[] = {LEDB,LED1,LED2,LED3};
 static gpioMap_t secuencia2[] = {LED3,LED2,LED1,LEDB};
 
-bool leerTecla(gpioMap_t tecla) {
+
+
+static bool leerTecla(gpioMap_t tecla) {
    bool_t tecla_apretada = false;
    if (tecla >= TEC1 && tecla <= TEC4) {
       tecla_apretada = !gpioRead(tecla); 
@@ -29,7 +51,7 @@ bool leerTecla(gpioMap_t tecla) {
    return tecla_apretada;
 }
 
-gpioMap_t teclaValida(void) {
+static gpioMap_t teclaValida(void) {
    static bool_t flag_tecla[FLAGS_QTY] = {true};
 	gpioMap_t tecla = 0;
    if (leerTecla(TEC1)) { // Sentido de secuencia 1 (INCREMENTAL)

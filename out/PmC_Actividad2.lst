@@ -56,27 +56,27 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS
  18 .noinit       00000000  100000b0  100000b0  00020058  2**2
                   CONTENTS
- 19 .debug_info   000207c1  00000000  00000000  00020058  2**0
+ 19 .debug_info   000207bd  00000000  00000000  00020058  2**0
                   CONTENTS, READONLY, DEBUGGING
- 20 .debug_abbrev 00004535  00000000  00000000  00040819  2**0
+ 20 .debug_abbrev 00004533  00000000  00000000  00040815  2**0
                   CONTENTS, READONLY, DEBUGGING
- 21 .debug_loc    0000725e  00000000  00000000  00044d4e  2**0
+ 21 .debug_loc    0000724b  00000000  00000000  00044d48  2**0
                   CONTENTS, READONLY, DEBUGGING
- 22 .debug_aranges 00000958  00000000  00000000  0004bfac  2**0
+ 22 .debug_aranges 00000958  00000000  00000000  0004bf93  2**0
                   CONTENTS, READONLY, DEBUGGING
- 23 .debug_ranges 00000978  00000000  00000000  0004c904  2**0
+ 23 .debug_ranges 00000978  00000000  00000000  0004c8eb  2**0
                   CONTENTS, READONLY, DEBUGGING
- 24 .debug_macro  0000d923  00000000  00000000  0004d27c  2**0
+ 24 .debug_macro  0000d923  00000000  00000000  0004d263  2**0
                   CONTENTS, READONLY, DEBUGGING
- 25 .debug_line   00012091  00000000  00000000  0005ab9f  2**0
+ 25 .debug_line   00012088  00000000  00000000  0005ab86  2**0
                   CONTENTS, READONLY, DEBUGGING
- 26 .debug_str    00029798  00000000  00000000  0006cc30  2**0
+ 26 .debug_str    00029798  00000000  00000000  0006cc0e  2**0
                   CONTENTS, READONLY, DEBUGGING
- 27 .comment      00000068  00000000  00000000  000963c8  2**0
+ 27 .comment      00000068  00000000  00000000  000963a6  2**0
                   CONTENTS, READONLY
- 28 .ARM.attributes 00000032  00000000  00000000  00096430  2**0
+ 28 .ARM.attributes 00000032  00000000  00000000  0009640e  2**0
                   CONTENTS, READONLY
- 29 .debug_frame  000016b8  00000000  00000000  00096464  2**2
+ 29 .debug_frame  000016b8  00000000  00000000  00096440  2**2
                   CONTENTS, READONLY, DEBUGGING
 SYMBOL TABLE:
 1a000000 l    d  .text	00000000 .text
@@ -113,13 +113,15 @@ SYMBOL TABLE:
 00000000 l    df *ABS*	00000000 vendor_interrupt.c
 00000000 l    df *ABS*	00000000 crp.c
 00000000 l    df *ABS*	00000000 teclas.c
+1a000300 l     F .text	0000001c leerTecla
+1a00031c l     F .text	00000048 teclaValida
 10000000 l     O .data	00000002 flag_tecla.14183
 10000004 l     O .data	00000004 secuencia1
 10000008 l     O .data	00000004 secuencia2
 1000000c l     O .data	00000008 times
 00000000 l    df *ABS*	00000000 main.c
 00000000 l    df *ABS*	00000000 secuencias.c
-1a0003c4 l     F .text	00000028 incrementarSecuencia
+1a0003c4 l     F .text	00000024 incrementarSecuencia
 10000058 l     O .bss	00000018 delayLeds
 10000070 l     O .bss	00000018 secuencia
 00000000 l    df *ABS*	00000000 led.c
@@ -186,7 +188,6 @@ SYMBOL TABLE:
 1a000c10 g     F .text	0000001c Chip_Clock_GetDividerSource
 1a000130  w    F .text	00000002 DebugMon_Handler
 1a080000 g       *ABS*	00000000 __top_MFlashA512
-1a000300 g     F .text	0000001c leerTecla
 1a0000c0 g       .text	00000000 __section_table_start
 1a000166  w    F .text	00000002 I2C0_IRQHandler
 1a0006dc g     F .text	00000008 __stdio_init
@@ -206,7 +207,6 @@ SYMBOL TABLE:
 53ff7586 g       *ABS*	00000000 __valid_user_code_checksum
 1a001d00 g       .ARM.exidx	00000000 _etext
 1a000166  w    F .text	00000002 USB1_IRQHandler
-1a00031c g     F .text	00000048 teclaValida
 1a000166  w    F .text	00000002 TIMER3_IRQHandler
 1a000e8e g     F .text	0000000c Chip_Clock_GetBaseClocktHz
 1a000166  w    F .text	00000002 UART0_IRQHandler
@@ -277,7 +277,7 @@ SYMBOL TABLE:
 1008a000 g       *ABS*	00000000 __top_RamLoc40
 1a00012e  w    F .text	00000002 SVC_Handler
 1a000e9c g     F .text	0000003c Chip_Clock_EnableOpts
-1a0003ec g     F .text	0000005c configurarSecuencia
+1a0003e8 g     F .text	00000060 configurarSecuencia
 1a000c48 g     F .text	000000b8 Chip_Clock_GetClockInputHz
 1a000d00 g     F .text	00000080 Chip_Clock_CalcMainPLLValue
 1a0011e4 g     F .text	00000038 SystemInit
@@ -534,12 +534,12 @@ Disassembly of section .text:
 1a0002fc:	ffff ffff                                   ....
 
 1a000300 <leerTecla>:
-
-static uint16_t times[DEMORAS_QTY] = {PERIODO_1S, PERIODO_500MS, PERIODO_2S, PERIODO_3S};
 static gpioMap_t secuencia1[] = {LEDB,LED1,LED2,LED3};
 static gpioMap_t secuencia2[] = {LED3,LED2,LED1,LEDB};
 
-bool leerTecla(gpioMap_t tecla) {
+
+
+static bool leerTecla(gpioMap_t tecla) {
 1a000300:	b508      	push	{r3, lr}
    bool_t tecla_apretada = false;
    if (tecla >= TEC1 && tecla <= TEC4) {
@@ -562,7 +562,7 @@ bool leerTecla(gpioMap_t tecla) {
 
 1a00031c <teclaValida>:
 
-gpioMap_t teclaValida(void) {
+static gpioMap_t teclaValida(void) {
 1a00031c:	b508      	push	{r3, lr}
    static bool_t flag_tecla[FLAGS_QTY] = {true};
 	gpioMap_t tecla = 0;
@@ -641,13 +641,13 @@ void interpretarTecla(void) {
 1a000378:	2204      	movs	r2, #4
 1a00037a:	4905      	ldr	r1, [pc, #20]	; (1a000390 <interpretarTecla+0x2c>)
 1a00037c:	4805      	ldr	r0, [pc, #20]	; (1a000394 <interpretarTecla+0x30>)
-1a00037e:	f000 f835 	bl	1a0003ec <configurarSecuencia>
+1a00037e:	f000 f833 	bl	1a0003e8 <configurarSecuencia>
 1a000382:	e7f6      	b.n	1a000372 <interpretarTecla+0xe>
       configurarSecuencia(secuencia2,times,sizeof(secuencia2)/sizeof(secuencia2[0]));
 1a000384:	2204      	movs	r2, #4
 1a000386:	4902      	ldr	r1, [pc, #8]	; (1a000390 <interpretarTecla+0x2c>)
 1a000388:	4803      	ldr	r0, [pc, #12]	; (1a000398 <interpretarTecla+0x34>)
-1a00038a:	f000 f82f 	bl	1a0003ec <configurarSecuencia>
+1a00038a:	f000 f82d 	bl	1a0003e8 <configurarSecuencia>
 1a00038e:	e7f0      	b.n	1a000372 <interpretarTecla+0xe>
 1a000390:	1000000c 	.word	0x1000000c
 1a000394:	10000004 	.word	0x10000004
@@ -661,7 +661,7 @@ void condicionInicial(void) {
 1a00039e:	2204      	movs	r2, #4
 1a0003a0:	4902      	ldr	r1, [pc, #8]	; (1a0003ac <condicionInicial+0x10>)
 1a0003a2:	4803      	ldr	r0, [pc, #12]	; (1a0003b0 <condicionInicial+0x14>)
-1a0003a4:	f000 f822 	bl	1a0003ec <configurarSecuencia>
+1a0003a4:	f000 f820 	bl	1a0003e8 <configurarSecuencia>
 1a0003a8:	bd08      	pop	{r3, pc}
 1a0003aa:	bf00      	nop
 1a0003ac:	1000000c 	.word	0x1000000c
@@ -695,7 +695,7 @@ static control_secuencia_t secuencia;
 
 static void incrementarSecuencia(void) {
 	secuencia.ptrLed++;
-1a0003c4:	4b08      	ldr	r3, [pc, #32]	; (1a0003e8 <incrementarSecuencia+0x24>)
+1a0003c4:	4b07      	ldr	r3, [pc, #28]	; (1a0003e4 <incrementarSecuencia+0x20>)
 1a0003c6:	681a      	ldr	r2, [r3, #0]
 1a0003c8:	3201      	adds	r2, #1
 1a0003ca:	601a      	str	r2, [r3, #0]
@@ -703,92 +703,90 @@ static void incrementarSecuencia(void) {
 1a0003cc:	68d9      	ldr	r1, [r3, #12]
 1a0003ce:	3102      	adds	r1, #2
 1a0003d0:	60d9      	str	r1, [r3, #12]
-	if (secuencia.ptrLed == secuencia.ptrUltimoLed) {
+	if (secuencia.ptrLed >= secuencia.ptrUltimoLed) {
 1a0003d2:	689b      	ldr	r3, [r3, #8]
 1a0003d4:	429a      	cmp	r2, r3
-1a0003d6:	d000      	beq.n	1a0003da <incrementarSecuencia+0x16>
+1a0003d6:	d304      	bcc.n	1a0003e2 <incrementarSecuencia+0x1e>
 		secuencia.ptrLed = secuencia.ptrPrimerLed;
+1a0003d8:	4b02      	ldr	r3, [pc, #8]	; (1a0003e4 <incrementarSecuencia+0x20>)
+1a0003da:	685a      	ldr	r2, [r3, #4]
+1a0003dc:	601a      	str	r2, [r3, #0]
       secuencia.ptrTiempo = secuencia.ptrPrimerTiempo;
+1a0003de:	691a      	ldr	r2, [r3, #16]
+1a0003e0:	60da      	str	r2, [r3, #12]
 	}
 }
-1a0003d8:	4770      	bx	lr
-		secuencia.ptrLed = secuencia.ptrPrimerLed;
-1a0003da:	4b03      	ldr	r3, [pc, #12]	; (1a0003e8 <incrementarSecuencia+0x24>)
-1a0003dc:	685a      	ldr	r2, [r3, #4]
-1a0003de:	601a      	str	r2, [r3, #0]
-      secuencia.ptrTiempo = secuencia.ptrPrimerTiempo;
-1a0003e0:	691a      	ldr	r2, [r3, #16]
-1a0003e2:	60da      	str	r2, [r3, #12]
-}
-1a0003e4:	e7f8      	b.n	1a0003d8 <incrementarSecuencia+0x14>
-1a0003e6:	bf00      	nop
-1a0003e8:	10000070 	.word	0x10000070
+1a0003e2:	4770      	bx	lr
+1a0003e4:	10000070 	.word	0x10000070
 
-1a0003ec <configurarSecuencia>:
+1a0003e8 <configurarSecuencia>:
 
 void configurarSecuencia(gpioMap_t psecuencia[], uint16_t tiempo_destello[], uint8_t tamanio_secuencia) {
-1a0003ec:	b538      	push	{r3, r4, r5, lr}
+1a0003e8:	b570      	push	{r4, r5, r6, lr}
+1a0003ea:	4604      	mov	r4, r0
+1a0003ec:	460e      	mov	r6, r1
+1a0003ee:	4615      	mov	r5, r2
    uint8_t i;
    for (i = 0;i < tamanio_secuencia; i++) {
-1a0003ee:	2300      	movs	r3, #0
-1a0003f0:	4293      	cmp	r3, r2
-1a0003f2:	d209      	bcs.n	1a000408 <configurarSecuencia+0x1c>
+1a0003f0:	2300      	movs	r3, #0
+1a0003f2:	42ab      	cmp	r3, r5
+1a0003f4:	d209      	bcs.n	1a00040a <configurarSecuencia+0x22>
       if (*secuencia.ptrLed == psecuencia[i]) {
-1a0003f4:	4c12      	ldr	r4, [pc, #72]	; (1a000440 <configurarSecuencia+0x54>)
-1a0003f6:	6824      	ldr	r4, [r4, #0]
-1a0003f8:	f994 5000 	ldrsb.w	r5, [r4]
-1a0003fc:	56c4      	ldrsb	r4, [r0, r3]
-1a0003fe:	42a5      	cmp	r5, r4
-1a000400:	d002      	beq.n	1a000408 <configurarSecuencia+0x1c>
+1a0003f6:	4a12      	ldr	r2, [pc, #72]	; (1a000440 <configurarSecuencia+0x58>)
+1a0003f8:	6812      	ldr	r2, [r2, #0]
+1a0003fa:	f992 1000 	ldrsb.w	r1, [r2]
+1a0003fe:	56e2      	ldrsb	r2, [r4, r3]
+1a000400:	4291      	cmp	r1, r2
+1a000402:	d002      	beq.n	1a00040a <configurarSecuencia+0x22>
    for (i = 0;i < tamanio_secuencia; i++) {
-1a000402:	3301      	adds	r3, #1
-1a000404:	b2db      	uxtb	r3, r3
-1a000406:	e7f3      	b.n	1a0003f0 <configurarSecuencia+0x4>
+1a000404:	3301      	adds	r3, #1
+1a000406:	b2db      	uxtb	r3, r3
+1a000408:	e7f3      	b.n	1a0003f2 <configurarSecuencia+0xa>
          break;
       }
    } 
    if (i < tamanio_secuencia) {
-1a000408:	4293      	cmp	r3, r2
-1a00040a:	d214      	bcs.n	1a000436 <configurarSecuencia+0x4a>
+1a00040a:	42ab      	cmp	r3, r5
+1a00040c:	d20e      	bcs.n	1a00042c <configurarSecuencia+0x44>
       secuencia.ptrLed = &psecuencia[i];
-1a00040c:	18c5      	adds	r5, r0, r3
-1a00040e:	4c0c      	ldr	r4, [pc, #48]	; (1a000440 <configurarSecuencia+0x54>)
-1a000410:	6025      	str	r5, [r4, #0]
+1a00040e:	18e1      	adds	r1, r4, r3
+1a000410:	4a0b      	ldr	r2, [pc, #44]	; (1a000440 <configurarSecuencia+0x58>)
+1a000412:	6011      	str	r1, [r2, #0]
       secuencia.ptrTiempo = &tiempo_destello[i];
-1a000412:	eb01 0343 	add.w	r3, r1, r3, lsl #1
-1a000416:	60e3      	str	r3, [r4, #12]
-   else {
+1a000414:	eb06 0343 	add.w	r3, r6, r3, lsl #1
+1a000418:	60d3      	str	r3, [r2, #12]
       secuencia.ptrLed = &psecuencia[0];
       secuencia.ptrTiempo = &tiempo_destello[0];
+      delayConfig(&delayLeds, *secuencia.ptrTiempo);
    }
    
    secuencia.ptrPrimerLed = &psecuencia[0];
-1a000418:	4b09      	ldr	r3, [pc, #36]	; (1a000440 <configurarSecuencia+0x54>)
-1a00041a:	6058      	str	r0, [r3, #4]
+1a00041a:	4b09      	ldr	r3, [pc, #36]	; (1a000440 <configurarSecuencia+0x58>)
+1a00041c:	605c      	str	r4, [r3, #4]
    secuencia.ptrPrimerTiempo = &tiempo_destello[0];
-1a00041c:	6119      	str	r1, [r3, #16]
+1a00041e:	611e      	str	r6, [r3, #16]
 
    secuencia.ptrUltimoLed = &psecuencia[tamanio_secuencia];
-1a00041e:	4410      	add	r0, r2
-1a000420:	6098      	str	r0, [r3, #8]
+1a000420:	442c      	add	r4, r5
+1a000422:	609c      	str	r4, [r3, #8]
    secuencia.ptrUltimoTiempo = &tiempo_destello[tamanio_secuencia];
-1a000422:	eb01 0242 	add.w	r2, r1, r2, lsl #1
-1a000426:	615a      	str	r2, [r3, #20]
+1a000424:	eb06 0545 	add.w	r5, r6, r5, lsl #1
+1a000428:	615d      	str	r5, [r3, #20]
 
-   delayConfig(&delayLeds, *secuencia.ptrTiempo);
-1a000428:	68db      	ldr	r3, [r3, #12]
-1a00042a:	881a      	ldrh	r2, [r3, #0]
-1a00042c:	2300      	movs	r3, #0
-1a00042e:	4805      	ldr	r0, [pc, #20]	; (1a000444 <configurarSecuencia+0x58>)
-1a000430:	f001 f90a 	bl	1a001648 <delayInit>
+  
 }
-1a000434:	bd38      	pop	{r3, r4, r5, pc}
+1a00042a:	bd70      	pop	{r4, r5, r6, pc}
       secuencia.ptrLed = &psecuencia[0];
-1a000436:	4b02      	ldr	r3, [pc, #8]	; (1a000440 <configurarSecuencia+0x54>)
-1a000438:	6018      	str	r0, [r3, #0]
+1a00042c:	4b04      	ldr	r3, [pc, #16]	; (1a000440 <configurarSecuencia+0x58>)
+1a00042e:	601c      	str	r4, [r3, #0]
       secuencia.ptrTiempo = &tiempo_destello[0];
-1a00043a:	60d9      	str	r1, [r3, #12]
-1a00043c:	e7ec      	b.n	1a000418 <configurarSecuencia+0x2c>
+1a000430:	60de      	str	r6, [r3, #12]
+      delayConfig(&delayLeds, *secuencia.ptrTiempo);
+1a000432:	8832      	ldrh	r2, [r6, #0]
+1a000434:	2300      	movs	r3, #0
+1a000436:	4803      	ldr	r0, [pc, #12]	; (1a000444 <configurarSecuencia+0x5c>)
+1a000438:	f001 f906 	bl	1a001648 <delayInit>
+1a00043c:	e7ed      	b.n	1a00041a <configurarSecuencia+0x32>
 1a00043e:	bf00      	nop
 1a000440:	10000070 	.word	0x10000070
 1a000444:	10000058 	.word	0x10000058
@@ -801,25 +799,25 @@ void activarSecuencia(void) {
 1a00044a:	480a      	ldr	r0, [pc, #40]	; (1a000474 <activarSecuencia+0x2c>)
 1a00044c:	f001 f90c 	bl	1a001668 <delayRead>
 1a000450:	b900      	cbnz	r0, 1a000454 <activarSecuencia+0xc>
+      incrementarSecuencia();
       encenderLedUnico(*secuencia.ptrLed);
       delayConfig(&delayLeds, *secuencia.ptrTiempo);
-      incrementarSecuencia();
    }
 }
 1a000452:	bd10      	pop	{r4, pc}
-      encenderLedUnico(*secuencia.ptrLed);
-1a000454:	4c08      	ldr	r4, [pc, #32]	; (1a000478 <activarSecuencia+0x30>)
-1a000456:	6823      	ldr	r3, [r4, #0]
-1a000458:	f993 0000 	ldrsb.w	r0, [r3]
-1a00045c:	f000 f80e 	bl	1a00047c <encenderLedUnico>
-      delayConfig(&delayLeds, *secuencia.ptrTiempo);
-1a000460:	68e3      	ldr	r3, [r4, #12]
-1a000462:	881a      	ldrh	r2, [r3, #0]
-1a000464:	2300      	movs	r3, #0
-1a000466:	4803      	ldr	r0, [pc, #12]	; (1a000474 <activarSecuencia+0x2c>)
-1a000468:	f001 f8ee 	bl	1a001648 <delayInit>
       incrementarSecuencia();
-1a00046c:	f7ff ffaa 	bl	1a0003c4 <incrementarSecuencia>
+1a000454:	f7ff ffb6 	bl	1a0003c4 <incrementarSecuencia>
+      encenderLedUnico(*secuencia.ptrLed);
+1a000458:	4c07      	ldr	r4, [pc, #28]	; (1a000478 <activarSecuencia+0x30>)
+1a00045a:	6823      	ldr	r3, [r4, #0]
+1a00045c:	f993 0000 	ldrsb.w	r0, [r3]
+1a000460:	f000 f80c 	bl	1a00047c <encenderLedUnico>
+      delayConfig(&delayLeds, *secuencia.ptrTiempo);
+1a000464:	68e3      	ldr	r3, [r4, #12]
+1a000466:	881a      	ldrh	r2, [r3, #0]
+1a000468:	2300      	movs	r3, #0
+1a00046a:	4802      	ldr	r0, [pc, #8]	; (1a000474 <activarSecuencia+0x2c>)
+1a00046c:	f001 f8ec 	bl	1a001648 <delayInit>
 }
 1a000470:	e7ef      	b.n	1a000452 <activarSecuencia+0xa>
 1a000472:	bf00      	nop

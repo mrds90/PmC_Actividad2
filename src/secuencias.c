@@ -9,6 +9,8 @@
 #include "../inc/secuencias.h"
 #include "led.h"
 
+static void incrementarSecuencia(void);
+
 /*=====[Definition macros of private constants]==============================*/
 
 /*=====[Definitions of extern global variables]==============================*/
@@ -24,7 +26,7 @@ static control_secuencia_t secuencia;
 static void incrementarSecuencia(void) {
 	secuencia.ptrLed++;
    secuencia.ptrTiempo++;
-	if (secuencia.ptrLed == secuencia.ptrUltimoLed) {
+	if (secuencia.ptrLed >= secuencia.ptrUltimoLed) {
 		secuencia.ptrLed = secuencia.ptrPrimerLed;
       secuencia.ptrTiempo = secuencia.ptrPrimerTiempo;
 	}
@@ -44,6 +46,7 @@ void configurarSecuencia(gpioMap_t psecuencia[], uint16_t tiempo_destello[], uin
    else {
       secuencia.ptrLed = &psecuencia[0];
       secuencia.ptrTiempo = &tiempo_destello[0];
+      delayConfig(&delayLeds, *secuencia.ptrTiempo);
    }
    
    secuencia.ptrPrimerLed = &psecuencia[0];
@@ -52,14 +55,14 @@ void configurarSecuencia(gpioMap_t psecuencia[], uint16_t tiempo_destello[], uin
    secuencia.ptrUltimoLed = &psecuencia[tamanio_secuencia];
    secuencia.ptrUltimoTiempo = &tiempo_destello[tamanio_secuencia];
 
-   delayConfig(&delayLeds, *secuencia.ptrTiempo);
+  
 }
 
 void activarSecuencia(void) {
    if(delayRead(&delayLeds)) {
+      incrementarSecuencia();
       encenderLedUnico(*secuencia.ptrLed);
       delayConfig(&delayLeds, *secuencia.ptrTiempo);
-      incrementarSecuencia();
    }
 }
 

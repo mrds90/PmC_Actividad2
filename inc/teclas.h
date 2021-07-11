@@ -22,26 +22,7 @@
 extern "C" {
 #endif
 
-/*=====[Definition macros of public constants]===============================*/
 
-/*=====[Public function-like macros]=========================================*/
-/**
- * @brief leo el estado de la tecla
- * 
- * @param tecla gpioMap_t
- * @return bool_t (true si tecla apretada)
- */
- bool leerTecla(gpioMap_t tecla);
-/**
- * @brief Devuleve la tecla recien presionada (solo por flanco)
- * 
- * @return gpioMap_t 
- */
-gpioMap_t teclaValida(void);
-/**
- * @brief Interpretar Tecla evalua cual es la tecla presionada y configura la secuencia.
- * 
- */
 void interpretarTecla(void);
 /**
  * @brief Configura la secuencia inicial con sus delays

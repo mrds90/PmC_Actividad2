@@ -19563,10 +19563,8 @@ END GROUP
  *(.text*)
  .text.leerTecla
                 0x000000001a000300       0x1c actividadPreInicio/PmC_Actividad2/out/actividadPreInicio/PmC_Actividad2/src/teclas.o
-                0x000000001a000300                leerTecla
  .text.teclaValida
                 0x000000001a00031c       0x48 actividadPreInicio/PmC_Actividad2/out/actividadPreInicio/PmC_Actividad2/src/teclas.o
-                0x000000001a00031c                teclaValida
  .text.interpretarTecla
                 0x000000001a000364       0x38 actividadPreInicio/PmC_Actividad2/out/actividadPreInicio/PmC_Actividad2/src/teclas.o
                 0x000000001a000364                interpretarTecla
@@ -19576,10 +19574,10 @@ END GROUP
  .text.main     0x000000001a0003b4       0x10 actividadPreInicio/PmC_Actividad2/out/actividadPreInicio/PmC_Actividad2/src/main.o
                 0x000000001a0003b4                main
  .text.incrementarSecuencia
-                0x000000001a0003c4       0x28 actividadPreInicio/PmC_Actividad2/out/actividadPreInicio/PmC_Actividad2/src/secuencias.o
+                0x000000001a0003c4       0x24 actividadPreInicio/PmC_Actividad2/out/actividadPreInicio/PmC_Actividad2/src/secuencias.o
  .text.configurarSecuencia
-                0x000000001a0003ec       0x5c actividadPreInicio/PmC_Actividad2/out/actividadPreInicio/PmC_Actividad2/src/secuencias.o
-                0x000000001a0003ec                configurarSecuencia
+                0x000000001a0003e8       0x60 actividadPreInicio/PmC_Actividad2/out/actividadPreInicio/PmC_Actividad2/src/secuencias.o
+                0x000000001a0003e8                configurarSecuencia
  .text.activarSecuencia
                 0x000000001a000448       0x34 actividadPreInicio/PmC_Actividad2/out/actividadPreInicio/PmC_Actividad2/src/secuencias.o
                 0x000000001a000448                activarSecuencia
@@ -20003,80 +20001,80 @@ END GROUP
                 0xffffffff53ff7586                PROVIDE (__valid_user_code_checksum = (0x0 - ((((((_vStackTop + (Reset_Handler + 0x1)) + (NMI_Handler + 0x1)) + (HardFault_Handler + 0x1)) + (DEFINED (MemManage_Handler)?MemManage_Handler:0x0 + 0x1)) + (DEFINED (BusFault_Handler)?BusFault_Handler:0x0 + 0x1)) + (DEFINED (UsageFault_Handler)?UsageFault_Handler:0x0 + 0x1))))
 OUTPUT(actividadPreInicio/PmC_Actividad2/out/PmC_Actividad2.elf elf32-littlearm)
 
-.debug_info     0x0000000000000000    0x207c1
+.debug_info     0x0000000000000000    0x207bd
  .debug_info    0x0000000000000000     0x2800 actividadPreInicio/PmC_Actividad2/out/actividadPreInicio/PmC_Actividad2/src/teclas.o
  .debug_info    0x0000000000002800     0x201a actividadPreInicio/PmC_Actividad2/out/actividadPreInicio/PmC_Actividad2/src/main.o
- .debug_info    0x000000000000481a     0x2798 actividadPreInicio/PmC_Actividad2/out/actividadPreInicio/PmC_Actividad2/src/secuencias.o
- .debug_info    0x0000000000006fb2     0x21e5 actividadPreInicio/PmC_Actividad2/out/actividadPreInicio/PmC_Actividad2/src/led.o
- .debug_info    0x0000000000009197      0x35d actividadPreInicio/PmC_Actividad2/out/libs/cmsis_core//src/armv7m_startup.o
- .debug_info    0x00000000000094f4     0x10c3 actividadPreInicio/PmC_Actividad2/out/libs/sys_newlib//src/system.o
- .debug_info    0x000000000000a5b7     0x23f7 actividadPreInicio/PmC_Actividad2/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
- .debug_info    0x000000000000c9ae     0x15d2 actividadPreInicio/PmC_Actividad2/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board_sysinit.o
- .debug_info    0x000000000000df80     0x1981 actividadPreInicio/PmC_Actividad2/out/libs/lpc_open/lpc_chip_43xx/src/uart_18xx_43xx.o
- .debug_info    0x000000000000f901      0xc0c actividadPreInicio/PmC_Actividad2/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
- .debug_info    0x000000000001050d      0xc97 actividadPreInicio/PmC_Actividad2/out/libs/lpc_open/lpc_chip_43xx/src/chip_18xx_43xx.o
- .debug_info    0x00000000000111a4     0x1b68 actividadPreInicio/PmC_Actividad2/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
- .debug_info    0x0000000000012d0c      0xb39 actividadPreInicio/PmC_Actividad2/out/libs/lpc_open/lpc_chip_43xx/src/sysinit_18xx_43xx.o
- .debug_info    0x0000000000013845      0x232 actividadPreInicio/PmC_Actividad2/out/libs/lpc_open/lpc_chip_43xx/src/gpio_18xx_43xx.o
- .debug_info    0x0000000000013a77     0x159b actividadPreInicio/PmC_Actividad2/out/libs/lpc_open/lpc_chip_43xx/src/i2c_18xx_43xx.o
- .debug_info    0x0000000000015012     0x1a33 actividadPreInicio/PmC_Actividad2/out/libs/lpc_open/lpc_chip_43xx/src/ssp_18xx_43xx.o
- .debug_info    0x0000000000016a45       0x40 actividadPreInicio/PmC_Actividad2/out/libs/lpc_open/lpc_startup/src/crp.o
- .debug_info    0x0000000000016a85      0xc8b actividadPreInicio/PmC_Actividad2/out/libs/lpc_open/lpc_startup/src/sysinit.o
- .debug_info    0x0000000000017710       0x76 actividadPreInicio/PmC_Actividad2/out/libs/lpc_open/lpc_startup/src/vendor_interrupt.o
- .debug_info    0x0000000000017786      0xf71 actividadPreInicio/PmC_Actividad2/out/libs/sapi/sapi_v0.6.2/soc/core/src/sapi_cyclesCounter.o
- .debug_info    0x00000000000186f7     0x15ae actividadPreInicio/PmC_Actividad2/out/libs/sapi/sapi_v0.6.2/soc/peripherals/src/sapi_tick.o
- .debug_info    0x0000000000019ca5     0x1ce4 actividadPreInicio/PmC_Actividad2/out/libs/sapi/sapi_v0.6.2/soc/peripherals/src/sapi_gpio.o
- .debug_info    0x000000000001b989     0x3586 actividadPreInicio/PmC_Actividad2/out/libs/sapi/sapi_v0.6.2/soc/peripherals/usb/device/src/sapi_usb_device.o
- .debug_info    0x000000000001ef0f      0xc64 actividadPreInicio/PmC_Actividad2/out/libs/sapi/sapi_v0.6.2/board/src/sapi_board.o
- .debug_info    0x000000000001fb73      0xc4e actividadPreInicio/PmC_Actividad2/out/libs/sapi/sapi_v0.6.2/abstract_modules/src/sapi_delay.o
+ .debug_info    0x000000000000481a     0x2794 actividadPreInicio/PmC_Actividad2/out/actividadPreInicio/PmC_Actividad2/src/secuencias.o
+ .debug_info    0x0000000000006fae     0x21e5 actividadPreInicio/PmC_Actividad2/out/actividadPreInicio/PmC_Actividad2/src/led.o
+ .debug_info    0x0000000000009193      0x35d actividadPreInicio/PmC_Actividad2/out/libs/cmsis_core//src/armv7m_startup.o
+ .debug_info    0x00000000000094f0     0x10c3 actividadPreInicio/PmC_Actividad2/out/libs/sys_newlib//src/system.o
+ .debug_info    0x000000000000a5b3     0x23f7 actividadPreInicio/PmC_Actividad2/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
+ .debug_info    0x000000000000c9aa     0x15d2 actividadPreInicio/PmC_Actividad2/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board_sysinit.o
+ .debug_info    0x000000000000df7c     0x1981 actividadPreInicio/PmC_Actividad2/out/libs/lpc_open/lpc_chip_43xx/src/uart_18xx_43xx.o
+ .debug_info    0x000000000000f8fd      0xc0c actividadPreInicio/PmC_Actividad2/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
+ .debug_info    0x0000000000010509      0xc97 actividadPreInicio/PmC_Actividad2/out/libs/lpc_open/lpc_chip_43xx/src/chip_18xx_43xx.o
+ .debug_info    0x00000000000111a0     0x1b68 actividadPreInicio/PmC_Actividad2/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
+ .debug_info    0x0000000000012d08      0xb39 actividadPreInicio/PmC_Actividad2/out/libs/lpc_open/lpc_chip_43xx/src/sysinit_18xx_43xx.o
+ .debug_info    0x0000000000013841      0x232 actividadPreInicio/PmC_Actividad2/out/libs/lpc_open/lpc_chip_43xx/src/gpio_18xx_43xx.o
+ .debug_info    0x0000000000013a73     0x159b actividadPreInicio/PmC_Actividad2/out/libs/lpc_open/lpc_chip_43xx/src/i2c_18xx_43xx.o
+ .debug_info    0x000000000001500e     0x1a33 actividadPreInicio/PmC_Actividad2/out/libs/lpc_open/lpc_chip_43xx/src/ssp_18xx_43xx.o
+ .debug_info    0x0000000000016a41       0x40 actividadPreInicio/PmC_Actividad2/out/libs/lpc_open/lpc_startup/src/crp.o
+ .debug_info    0x0000000000016a81      0xc8b actividadPreInicio/PmC_Actividad2/out/libs/lpc_open/lpc_startup/src/sysinit.o
+ .debug_info    0x000000000001770c       0x76 actividadPreInicio/PmC_Actividad2/out/libs/lpc_open/lpc_startup/src/vendor_interrupt.o
+ .debug_info    0x0000000000017782      0xf71 actividadPreInicio/PmC_Actividad2/out/libs/sapi/sapi_v0.6.2/soc/core/src/sapi_cyclesCounter.o
+ .debug_info    0x00000000000186f3     0x15ae actividadPreInicio/PmC_Actividad2/out/libs/sapi/sapi_v0.6.2/soc/peripherals/src/sapi_tick.o
+ .debug_info    0x0000000000019ca1     0x1ce4 actividadPreInicio/PmC_Actividad2/out/libs/sapi/sapi_v0.6.2/soc/peripherals/src/sapi_gpio.o
+ .debug_info    0x000000000001b985     0x3586 actividadPreInicio/PmC_Actividad2/out/libs/sapi/sapi_v0.6.2/soc/peripherals/usb/device/src/sapi_usb_device.o
+ .debug_info    0x000000000001ef0b      0xc64 actividadPreInicio/PmC_Actividad2/out/libs/sapi/sapi_v0.6.2/board/src/sapi_board.o
+ .debug_info    0x000000000001fb6f      0xc4e actividadPreInicio/PmC_Actividad2/out/libs/sapi/sapi_v0.6.2/abstract_modules/src/sapi_delay.o
 
-.debug_abbrev   0x0000000000000000     0x4535
- .debug_abbrev  0x0000000000000000      0x325 actividadPreInicio/PmC_Actividad2/out/actividadPreInicio/PmC_Actividad2/src/teclas.o
- .debug_abbrev  0x0000000000000325      0x27c actividadPreInicio/PmC_Actividad2/out/actividadPreInicio/PmC_Actividad2/src/main.o
- .debug_abbrev  0x00000000000005a1      0x316 actividadPreInicio/PmC_Actividad2/out/actividadPreInicio/PmC_Actividad2/src/secuencias.o
- .debug_abbrev  0x00000000000008b7      0x2eb actividadPreInicio/PmC_Actividad2/out/actividadPreInicio/PmC_Actividad2/src/led.o
- .debug_abbrev  0x0000000000000ba2      0x127 actividadPreInicio/PmC_Actividad2/out/libs/cmsis_core//src/armv7m_startup.o
- .debug_abbrev  0x0000000000000cc9      0x301 actividadPreInicio/PmC_Actividad2/out/libs/sys_newlib//src/system.o
- .debug_abbrev  0x0000000000000fca      0x512 actividadPreInicio/PmC_Actividad2/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
- .debug_abbrev  0x00000000000014dc      0x352 actividadPreInicio/PmC_Actividad2/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board_sysinit.o
- .debug_abbrev  0x000000000000182e      0x42c actividadPreInicio/PmC_Actividad2/out/libs/lpc_open/lpc_chip_43xx/src/uart_18xx_43xx.o
- .debug_abbrev  0x0000000000001c5a      0x219 actividadPreInicio/PmC_Actividad2/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
- .debug_abbrev  0x0000000000001e73      0x1ee actividadPreInicio/PmC_Actividad2/out/libs/lpc_open/lpc_chip_43xx/src/chip_18xx_43xx.o
- .debug_abbrev  0x0000000000002061      0x3ef actividadPreInicio/PmC_Actividad2/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
- .debug_abbrev  0x0000000000002450      0x245 actividadPreInicio/PmC_Actividad2/out/libs/lpc_open/lpc_chip_43xx/src/sysinit_18xx_43xx.o
- .debug_abbrev  0x0000000000002695      0x114 actividadPreInicio/PmC_Actividad2/out/libs/lpc_open/lpc_chip_43xx/src/gpio_18xx_43xx.o
- .debug_abbrev  0x00000000000027a9      0x3af actividadPreInicio/PmC_Actividad2/out/libs/lpc_open/lpc_chip_43xx/src/i2c_18xx_43xx.o
- .debug_abbrev  0x0000000000002b58      0x38a actividadPreInicio/PmC_Actividad2/out/libs/lpc_open/lpc_chip_43xx/src/ssp_18xx_43xx.o
- .debug_abbrev  0x0000000000002ee2       0x38 actividadPreInicio/PmC_Actividad2/out/libs/lpc_open/lpc_startup/src/crp.o
- .debug_abbrev  0x0000000000002f1a      0x260 actividadPreInicio/PmC_Actividad2/out/libs/lpc_open/lpc_startup/src/sysinit.o
- .debug_abbrev  0x000000000000317a       0x78 actividadPreInicio/PmC_Actividad2/out/libs/lpc_open/lpc_startup/src/vendor_interrupt.o
- .debug_abbrev  0x00000000000031f2      0x26c actividadPreInicio/PmC_Actividad2/out/libs/sapi/sapi_v0.6.2/soc/core/src/sapi_cyclesCounter.o
- .debug_abbrev  0x000000000000345e      0x3cb actividadPreInicio/PmC_Actividad2/out/libs/sapi/sapi_v0.6.2/soc/peripherals/src/sapi_tick.o
- .debug_abbrev  0x0000000000003829      0x3f2 actividadPreInicio/PmC_Actividad2/out/libs/sapi/sapi_v0.6.2/soc/peripherals/src/sapi_gpio.o
- .debug_abbrev  0x0000000000003c1b      0x448 actividadPreInicio/PmC_Actividad2/out/libs/sapi/sapi_v0.6.2/soc/peripherals/usb/device/src/sapi_usb_device.o
- .debug_abbrev  0x0000000000004063      0x242 actividadPreInicio/PmC_Actividad2/out/libs/sapi/sapi_v0.6.2/board/src/sapi_board.o
- .debug_abbrev  0x00000000000042a5      0x290 actividadPreInicio/PmC_Actividad2/out/libs/sapi/sapi_v0.6.2/abstract_modules/src/sapi_delay.o
+.debug_abbrev   0x0000000000000000     0x4533
+ .debug_abbrev  0x0000000000000000      0x323 actividadPreInicio/PmC_Actividad2/out/actividadPreInicio/PmC_Actividad2/src/teclas.o
+ .debug_abbrev  0x0000000000000323      0x27c actividadPreInicio/PmC_Actividad2/out/actividadPreInicio/PmC_Actividad2/src/main.o
+ .debug_abbrev  0x000000000000059f      0x316 actividadPreInicio/PmC_Actividad2/out/actividadPreInicio/PmC_Actividad2/src/secuencias.o
+ .debug_abbrev  0x00000000000008b5      0x2eb actividadPreInicio/PmC_Actividad2/out/actividadPreInicio/PmC_Actividad2/src/led.o
+ .debug_abbrev  0x0000000000000ba0      0x127 actividadPreInicio/PmC_Actividad2/out/libs/cmsis_core//src/armv7m_startup.o
+ .debug_abbrev  0x0000000000000cc7      0x301 actividadPreInicio/PmC_Actividad2/out/libs/sys_newlib//src/system.o
+ .debug_abbrev  0x0000000000000fc8      0x512 actividadPreInicio/PmC_Actividad2/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
+ .debug_abbrev  0x00000000000014da      0x352 actividadPreInicio/PmC_Actividad2/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board_sysinit.o
+ .debug_abbrev  0x000000000000182c      0x42c actividadPreInicio/PmC_Actividad2/out/libs/lpc_open/lpc_chip_43xx/src/uart_18xx_43xx.o
+ .debug_abbrev  0x0000000000001c58      0x219 actividadPreInicio/PmC_Actividad2/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
+ .debug_abbrev  0x0000000000001e71      0x1ee actividadPreInicio/PmC_Actividad2/out/libs/lpc_open/lpc_chip_43xx/src/chip_18xx_43xx.o
+ .debug_abbrev  0x000000000000205f      0x3ef actividadPreInicio/PmC_Actividad2/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
+ .debug_abbrev  0x000000000000244e      0x245 actividadPreInicio/PmC_Actividad2/out/libs/lpc_open/lpc_chip_43xx/src/sysinit_18xx_43xx.o
+ .debug_abbrev  0x0000000000002693      0x114 actividadPreInicio/PmC_Actividad2/out/libs/lpc_open/lpc_chip_43xx/src/gpio_18xx_43xx.o
+ .debug_abbrev  0x00000000000027a7      0x3af actividadPreInicio/PmC_Actividad2/out/libs/lpc_open/lpc_chip_43xx/src/i2c_18xx_43xx.o
+ .debug_abbrev  0x0000000000002b56      0x38a actividadPreInicio/PmC_Actividad2/out/libs/lpc_open/lpc_chip_43xx/src/ssp_18xx_43xx.o
+ .debug_abbrev  0x0000000000002ee0       0x38 actividadPreInicio/PmC_Actividad2/out/libs/lpc_open/lpc_startup/src/crp.o
+ .debug_abbrev  0x0000000000002f18      0x260 actividadPreInicio/PmC_Actividad2/out/libs/lpc_open/lpc_startup/src/sysinit.o
+ .debug_abbrev  0x0000000000003178       0x78 actividadPreInicio/PmC_Actividad2/out/libs/lpc_open/lpc_startup/src/vendor_interrupt.o
+ .debug_abbrev  0x00000000000031f0      0x26c actividadPreInicio/PmC_Actividad2/out/libs/sapi/sapi_v0.6.2/soc/core/src/sapi_cyclesCounter.o
+ .debug_abbrev  0x000000000000345c      0x3cb actividadPreInicio/PmC_Actividad2/out/libs/sapi/sapi_v0.6.2/soc/peripherals/src/sapi_tick.o
+ .debug_abbrev  0x0000000000003827      0x3f2 actividadPreInicio/PmC_Actividad2/out/libs/sapi/sapi_v0.6.2/soc/peripherals/src/sapi_gpio.o
+ .debug_abbrev  0x0000000000003c19      0x448 actividadPreInicio/PmC_Actividad2/out/libs/sapi/sapi_v0.6.2/soc/peripherals/usb/device/src/sapi_usb_device.o
+ .debug_abbrev  0x0000000000004061      0x242 actividadPreInicio/PmC_Actividad2/out/libs/sapi/sapi_v0.6.2/board/src/sapi_board.o
+ .debug_abbrev  0x00000000000042a3      0x290 actividadPreInicio/PmC_Actividad2/out/libs/sapi/sapi_v0.6.2/abstract_modules/src/sapi_delay.o
 
-.debug_loc      0x0000000000000000     0x725e
+.debug_loc      0x0000000000000000     0x724b
  .debug_loc     0x0000000000000000      0x11a actividadPreInicio/PmC_Actividad2/out/actividadPreInicio/PmC_Actividad2/src/teclas.o
- .debug_loc     0x000000000000011a       0xe4 actividadPreInicio/PmC_Actividad2/out/actividadPreInicio/PmC_Actividad2/src/secuencias.o
- .debug_loc     0x00000000000001fe       0xb6 actividadPreInicio/PmC_Actividad2/out/actividadPreInicio/PmC_Actividad2/src/led.o
- .debug_loc     0x00000000000002b4      0x282 actividadPreInicio/PmC_Actividad2/out/libs/cmsis_core//src/armv7m_startup.o
- .debug_loc     0x0000000000000536      0x653 actividadPreInicio/PmC_Actividad2/out/libs/sys_newlib//src/system.o
- .debug_loc     0x0000000000000b89      0x659 actividadPreInicio/PmC_Actividad2/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
- .debug_loc     0x00000000000011e2      0x10f actividadPreInicio/PmC_Actividad2/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board_sysinit.o
- .debug_loc     0x00000000000012f1      0xf38 actividadPreInicio/PmC_Actividad2/out/libs/lpc_open/lpc_chip_43xx/src/uart_18xx_43xx.o
- .debug_loc     0x0000000000002229      0x738 actividadPreInicio/PmC_Actividad2/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
- .debug_loc     0x0000000000002961     0x1505 actividadPreInicio/PmC_Actividad2/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
- .debug_loc     0x0000000000003e66      0x1e2 actividadPreInicio/PmC_Actividad2/out/libs/lpc_open/lpc_chip_43xx/src/sysinit_18xx_43xx.o
- .debug_loc     0x0000000000004048      0xe82 actividadPreInicio/PmC_Actividad2/out/libs/lpc_open/lpc_chip_43xx/src/i2c_18xx_43xx.o
- .debug_loc     0x0000000000004eca      0xfd3 actividadPreInicio/PmC_Actividad2/out/libs/lpc_open/lpc_chip_43xx/src/ssp_18xx_43xx.o
- .debug_loc     0x0000000000005e9d       0x15 actividadPreInicio/PmC_Actividad2/out/libs/lpc_open/lpc_startup/src/sysinit.o
- .debug_loc     0x0000000000005eb2      0x109 actividadPreInicio/PmC_Actividad2/out/libs/sapi/sapi_v0.6.2/soc/core/src/sapi_cyclesCounter.o
- .debug_loc     0x0000000000005fbb      0x1a3 actividadPreInicio/PmC_Actividad2/out/libs/sapi/sapi_v0.6.2/soc/peripherals/src/sapi_tick.o
- .debug_loc     0x000000000000615e      0xaff actividadPreInicio/PmC_Actividad2/out/libs/sapi/sapi_v0.6.2/soc/peripherals/src/sapi_gpio.o
- .debug_loc     0x0000000000006c5d      0x3e0 actividadPreInicio/PmC_Actividad2/out/libs/sapi/sapi_v0.6.2/soc/peripherals/usb/device/src/sapi_usb_device.o
- .debug_loc     0x000000000000703d      0x221 actividadPreInicio/PmC_Actividad2/out/libs/sapi/sapi_v0.6.2/abstract_modules/src/sapi_delay.o
+ .debug_loc     0x000000000000011a       0xd1 actividadPreInicio/PmC_Actividad2/out/actividadPreInicio/PmC_Actividad2/src/secuencias.o
+ .debug_loc     0x00000000000001eb       0xb6 actividadPreInicio/PmC_Actividad2/out/actividadPreInicio/PmC_Actividad2/src/led.o
+ .debug_loc     0x00000000000002a1      0x282 actividadPreInicio/PmC_Actividad2/out/libs/cmsis_core//src/armv7m_startup.o
+ .debug_loc     0x0000000000000523      0x653 actividadPreInicio/PmC_Actividad2/out/libs/sys_newlib//src/system.o
+ .debug_loc     0x0000000000000b76      0x659 actividadPreInicio/PmC_Actividad2/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
+ .debug_loc     0x00000000000011cf      0x10f actividadPreInicio/PmC_Actividad2/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board_sysinit.o
+ .debug_loc     0x00000000000012de      0xf38 actividadPreInicio/PmC_Actividad2/out/libs/lpc_open/lpc_chip_43xx/src/uart_18xx_43xx.o
+ .debug_loc     0x0000000000002216      0x738 actividadPreInicio/PmC_Actividad2/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
+ .debug_loc     0x000000000000294e     0x1505 actividadPreInicio/PmC_Actividad2/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
+ .debug_loc     0x0000000000003e53      0x1e2 actividadPreInicio/PmC_Actividad2/out/libs/lpc_open/lpc_chip_43xx/src/sysinit_18xx_43xx.o
+ .debug_loc     0x0000000000004035      0xe82 actividadPreInicio/PmC_Actividad2/out/libs/lpc_open/lpc_chip_43xx/src/i2c_18xx_43xx.o
+ .debug_loc     0x0000000000004eb7      0xfd3 actividadPreInicio/PmC_Actividad2/out/libs/lpc_open/lpc_chip_43xx/src/ssp_18xx_43xx.o
+ .debug_loc     0x0000000000005e8a       0x15 actividadPreInicio/PmC_Actividad2/out/libs/lpc_open/lpc_startup/src/sysinit.o
+ .debug_loc     0x0000000000005e9f      0x109 actividadPreInicio/PmC_Actividad2/out/libs/sapi/sapi_v0.6.2/soc/core/src/sapi_cyclesCounter.o
+ .debug_loc     0x0000000000005fa8      0x1a3 actividadPreInicio/PmC_Actividad2/out/libs/sapi/sapi_v0.6.2/soc/peripherals/src/sapi_tick.o
+ .debug_loc     0x000000000000614b      0xaff actividadPreInicio/PmC_Actividad2/out/libs/sapi/sapi_v0.6.2/soc/peripherals/src/sapi_gpio.o
+ .debug_loc     0x0000000000006c4a      0x3e0 actividadPreInicio/PmC_Actividad2/out/libs/sapi/sapi_v0.6.2/soc/peripherals/usb/device/src/sapi_usb_device.o
+ .debug_loc     0x000000000000702a      0x221 actividadPreInicio/PmC_Actividad2/out/libs/sapi/sapi_v0.6.2/abstract_modules/src/sapi_delay.o
 
 .debug_aranges  0x0000000000000000      0x958
  .debug_aranges
@@ -20316,32 +20314,32 @@ OUTPUT(actividadPreInicio/PmC_Actividad2/out/PmC_Actividad2.elf elf32-littlearm)
  .debug_macro   0x000000000000d3c5      0x480 actividadPreInicio/PmC_Actividad2/out/libs/sapi/sapi_v0.6.2/abstract_modules/src/sapi_delay.o
  .debug_macro   0x000000000000d845       0xde actividadPreInicio/PmC_Actividad2/out/libs/sapi/sapi_v0.6.2/abstract_modules/src/sapi_delay.o
 
-.debug_line     0x0000000000000000    0x12091
- .debug_line    0x0000000000000000     0x12d7 actividadPreInicio/PmC_Actividad2/out/actividadPreInicio/PmC_Actividad2/src/teclas.o
- .debug_line    0x00000000000012d7     0x1211 actividadPreInicio/PmC_Actividad2/out/actividadPreInicio/PmC_Actividad2/src/main.o
- .debug_line    0x00000000000024e8     0x1324 actividadPreInicio/PmC_Actividad2/out/actividadPreInicio/PmC_Actividad2/src/secuencias.o
- .debug_line    0x000000000000380c     0x125c actividadPreInicio/PmC_Actividad2/out/actividadPreInicio/PmC_Actividad2/src/led.o
- .debug_line    0x0000000000004a68      0x267 actividadPreInicio/PmC_Actividad2/out/libs/cmsis_core//src/armv7m_startup.o
- .debug_line    0x0000000000004ccf      0x695 actividadPreInicio/PmC_Actividad2/out/libs/sys_newlib//src/system.o
- .debug_line    0x0000000000005364      0xda6 actividadPreInicio/PmC_Actividad2/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
- .debug_line    0x000000000000610a      0x93d actividadPreInicio/PmC_Actividad2/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board_sysinit.o
- .debug_line    0x0000000000006a47      0xf03 actividadPreInicio/PmC_Actividad2/out/libs/lpc_open/lpc_chip_43xx/src/uart_18xx_43xx.o
- .debug_line    0x000000000000794a      0xab8 actividadPreInicio/PmC_Actividad2/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
- .debug_line    0x0000000000008402      0x7cc actividadPreInicio/PmC_Actividad2/out/libs/lpc_open/lpc_chip_43xx/src/chip_18xx_43xx.o
- .debug_line    0x0000000000008bce     0x1470 actividadPreInicio/PmC_Actividad2/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
- .debug_line    0x000000000000a03e      0x957 actividadPreInicio/PmC_Actividad2/out/libs/lpc_open/lpc_chip_43xx/src/sysinit_18xx_43xx.o
- .debug_line    0x000000000000a995      0x745 actividadPreInicio/PmC_Actividad2/out/libs/lpc_open/lpc_chip_43xx/src/gpio_18xx_43xx.o
- .debug_line    0x000000000000b0da     0x1077 actividadPreInicio/PmC_Actividad2/out/libs/lpc_open/lpc_chip_43xx/src/i2c_18xx_43xx.o
- .debug_line    0x000000000000c151     0x127e actividadPreInicio/PmC_Actividad2/out/libs/lpc_open/lpc_chip_43xx/src/ssp_18xx_43xx.o
- .debug_line    0x000000000000d3cf       0x44 actividadPreInicio/PmC_Actividad2/out/libs/lpc_open/lpc_startup/src/crp.o
- .debug_line    0x000000000000d413      0x882 actividadPreInicio/PmC_Actividad2/out/libs/lpc_open/lpc_startup/src/sysinit.o
- .debug_line    0x000000000000dc95       0x6f actividadPreInicio/PmC_Actividad2/out/libs/lpc_open/lpc_startup/src/vendor_interrupt.o
- .debug_line    0x000000000000dd04      0x9b8 actividadPreInicio/PmC_Actividad2/out/libs/sapi/sapi_v0.6.2/soc/core/src/sapi_cyclesCounter.o
- .debug_line    0x000000000000e6bc      0xaed actividadPreInicio/PmC_Actividad2/out/libs/sapi/sapi_v0.6.2/soc/peripherals/src/sapi_tick.o
- .debug_line    0x000000000000f1a9      0xc70 actividadPreInicio/PmC_Actividad2/out/libs/sapi/sapi_v0.6.2/soc/peripherals/src/sapi_gpio.o
- .debug_line    0x000000000000fe19      0xd94 actividadPreInicio/PmC_Actividad2/out/libs/sapi/sapi_v0.6.2/soc/peripherals/usb/device/src/sapi_usb_device.o
- .debug_line    0x0000000000010bad      0x989 actividadPreInicio/PmC_Actividad2/out/libs/sapi/sapi_v0.6.2/board/src/sapi_board.o
- .debug_line    0x0000000000011536      0xb5b actividadPreInicio/PmC_Actividad2/out/libs/sapi/sapi_v0.6.2/abstract_modules/src/sapi_delay.o
+.debug_line     0x0000000000000000    0x12088
+ .debug_line    0x0000000000000000     0x12d8 actividadPreInicio/PmC_Actividad2/out/actividadPreInicio/PmC_Actividad2/src/teclas.o
+ .debug_line    0x00000000000012d8     0x1211 actividadPreInicio/PmC_Actividad2/out/actividadPreInicio/PmC_Actividad2/src/main.o
+ .debug_line    0x00000000000024e9     0x131a actividadPreInicio/PmC_Actividad2/out/actividadPreInicio/PmC_Actividad2/src/secuencias.o
+ .debug_line    0x0000000000003803     0x125c actividadPreInicio/PmC_Actividad2/out/actividadPreInicio/PmC_Actividad2/src/led.o
+ .debug_line    0x0000000000004a5f      0x267 actividadPreInicio/PmC_Actividad2/out/libs/cmsis_core//src/armv7m_startup.o
+ .debug_line    0x0000000000004cc6      0x695 actividadPreInicio/PmC_Actividad2/out/libs/sys_newlib//src/system.o
+ .debug_line    0x000000000000535b      0xda6 actividadPreInicio/PmC_Actividad2/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board.o
+ .debug_line    0x0000000000006101      0x93d actividadPreInicio/PmC_Actividad2/out/libs/lpc_open/boards/edu_ciaa_nxp/src/board_sysinit.o
+ .debug_line    0x0000000000006a3e      0xf03 actividadPreInicio/PmC_Actividad2/out/libs/lpc_open/lpc_chip_43xx/src/uart_18xx_43xx.o
+ .debug_line    0x0000000000007941      0xab8 actividadPreInicio/PmC_Actividad2/out/libs/lpc_open/lpc_chip_43xx/src/adc_18xx_43xx.o
+ .debug_line    0x00000000000083f9      0x7cc actividadPreInicio/PmC_Actividad2/out/libs/lpc_open/lpc_chip_43xx/src/chip_18xx_43xx.o
+ .debug_line    0x0000000000008bc5     0x1470 actividadPreInicio/PmC_Actividad2/out/libs/lpc_open/lpc_chip_43xx/src/clock_18xx_43xx.o
+ .debug_line    0x000000000000a035      0x957 actividadPreInicio/PmC_Actividad2/out/libs/lpc_open/lpc_chip_43xx/src/sysinit_18xx_43xx.o
+ .debug_line    0x000000000000a98c      0x745 actividadPreInicio/PmC_Actividad2/out/libs/lpc_open/lpc_chip_43xx/src/gpio_18xx_43xx.o
+ .debug_line    0x000000000000b0d1     0x1077 actividadPreInicio/PmC_Actividad2/out/libs/lpc_open/lpc_chip_43xx/src/i2c_18xx_43xx.o
+ .debug_line    0x000000000000c148     0x127e actividadPreInicio/PmC_Actividad2/out/libs/lpc_open/lpc_chip_43xx/src/ssp_18xx_43xx.o
+ .debug_line    0x000000000000d3c6       0x44 actividadPreInicio/PmC_Actividad2/out/libs/lpc_open/lpc_startup/src/crp.o
+ .debug_line    0x000000000000d40a      0x882 actividadPreInicio/PmC_Actividad2/out/libs/lpc_open/lpc_startup/src/sysinit.o
+ .debug_line    0x000000000000dc8c       0x6f actividadPreInicio/PmC_Actividad2/out/libs/lpc_open/lpc_startup/src/vendor_interrupt.o
+ .debug_line    0x000000000000dcfb      0x9b8 actividadPreInicio/PmC_Actividad2/out/libs/sapi/sapi_v0.6.2/soc/core/src/sapi_cyclesCounter.o
+ .debug_line    0x000000000000e6b3      0xaed actividadPreInicio/PmC_Actividad2/out/libs/sapi/sapi_v0.6.2/soc/peripherals/src/sapi_tick.o
+ .debug_line    0x000000000000f1a0      0xc70 actividadPreInicio/PmC_Actividad2/out/libs/sapi/sapi_v0.6.2/soc/peripherals/src/sapi_gpio.o
+ .debug_line    0x000000000000fe10      0xd94 actividadPreInicio/PmC_Actividad2/out/libs/sapi/sapi_v0.6.2/soc/peripherals/usb/device/src/sapi_usb_device.o
+ .debug_line    0x0000000000010ba4      0x989 actividadPreInicio/PmC_Actividad2/out/libs/sapi/sapi_v0.6.2/board/src/sapi_board.o
+ .debug_line    0x000000000001152d      0xb5b actividadPreInicio/PmC_Actividad2/out/libs/sapi/sapi_v0.6.2/abstract_modules/src/sapi_delay.o
 
 .debug_str      0x0000000000000000    0x29798
  .debug_str     0x0000000000000000    0x251fe actividadPreInicio/PmC_Actividad2/out/actividadPreInicio/PmC_Actividad2/src/teclas.o
@@ -21849,7 +21847,6 @@ lcdSendStringClearLine                            actividadPreInicio/PmC_Activid
 lcdSendStringFormXY                               actividadPreInicio/PmC_Actividad2/out/libs/sapi/sapi_v0.6.2/external_peripherals/display/drivers/LCD/HD44780/GPIOs/display_lcd_hd44780_gpios.o
 lcdSendStringFormXYClearLine                      actividadPreInicio/PmC_Actividad2/out/libs/sapi/sapi_v0.6.2/external_peripherals/display/drivers/LCD/HD44780/GPIOs/display_lcd_hd44780_gpios.o
 lcdSendStringRaw                                  actividadPreInicio/PmC_Actividad2/out/libs/sapi/sapi_v0.6.2/external_peripherals/display/drivers/LCD/HD44780/GPIOs/display_lcd_hd44780_gpios.o
-leerTecla                                         actividadPreInicio/PmC_Actividad2/out/actividadPreInicio/PmC_Actividad2/src/teclas.o
 localeconv                                        /home/marcos/CIAA_Software_1.1-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-localeconv.o)
 main                                              actividadPreInicio/PmC_Actividad2/out/actividadPreInicio/PmC_Actividad2/src/main.o
                                                   actividadPreInicio/PmC_Actividad2/out/libs/cmsis_core//src/armv7m_startup.o
@@ -22009,7 +22006,6 @@ strncpy                                           /home/marcos/CIAA_Software_1.1
                                                   /home/marcos/CIAA_Software_1.1-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-vfiprintf.o)
                                                   /home/marcos/CIAA_Software_1.1-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-svfprintf.o)
                                                   /home/marcos/CIAA_Software_1.1-linux-x64/tools/gcc-arm-embedded/bin/../lib/gcc/arm-none-eabi/8.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(lib_a-vfprintf.o)
-teclaValida                                       actividadPreInicio/PmC_Actividad2/out/actividadPreInicio/PmC_Actividad2/src/teclas.o
 thermometerBitmap                                 actividadPreInicio/PmC_Actividad2/out/libs/sapi/sapi_v0.6.2/external_peripherals/display/fonts/chars_5x8px/icon_chars_5x8px.o
 thermometerChar                                   actividadPreInicio/PmC_Actividad2/out/libs/sapi/sapi_v0.6.2/external_peripherals/display/fonts/chars_5x8px/icon_chars_5x8px.o
 thitaChar                                         actividadPreInicio/PmC_Actividad2/out/libs/sapi/sapi_v0.6.2/external_peripherals/display/fonts/chars_5x8px/greek_chars_5x8px.o
