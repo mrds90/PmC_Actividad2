@@ -37,7 +37,17 @@ extern "C" {
  * 
  * @return gpioMap_t 
  */
-gpioMap_t TeclaValida(void);
+gpioMap_t teclaValida(void);
+/**
+ * @brief Interpretar Tecla evalua cual es la tecla presionada y configura la secuencia.
+ * 
+ */
+void interpretarTecla(void);
+/**
+ * @brief Configura la secuencia inicial con sus delays
+ * 
+ */
+void condicionInicial(void);
 /*=====[Definitions of public data types]====================================*/
 /**
  * @brief Indice de flags que habilitan las teclas
@@ -49,6 +59,19 @@ typedef enum {
 
    FLAGS_QTY
 } flag_tecla_t;
+
+/**
+ * @brief Indice del vector que tiene los tiempos de demora.
+ * 
+ */
+typedef enum {
+   D1S,
+   D500MS,
+   D2S,
+   D3S,
+
+   DEMORAS_QTY
+} demoras_t;
 /*=====[Prototypes (declarations) of public functions]=======================*/
 
 /*=====[Prototypes (declarations) of public interrupt functions]=============*/

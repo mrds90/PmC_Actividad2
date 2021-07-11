@@ -129,5 +129,4 @@ actividadPreInicio/PmC_Actividad2/out/actividadPreInicio/PmC_Actividad2/src/main
  libs/sapi/sapi_v0.6.2/external_peripherals/pressure_temperature/bmp280/inc/bmp280.h \
  libs/sapi/sapi_v0.6.2/external_peripherals/pressure_temperature/bmp280/inc/bmp280_defs.h \
  libs/sapi/sapi_v0.6.2/external_peripherals/mcp23017/inc/mcp23017.h \
- actividadPreInicio/PmC_Actividad2/inc/teclas.h \
- actividadPreInicio/PmC_Actividad2/inc/secuencias.h
+ actividadPreInicio/PmC_Actividad2/inc/teclas.h

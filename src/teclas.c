@@ -8,10 +8,18 @@
 
 #include "teclas.h"
 #include "sapi.h"
+#include "secuencias.h"
 
-
+/*=====[Definition macros of private constants]==============================*/
+#define PERIODO_1S              1000 
+#define PERIODO_500MS           500 
+#define PERIODO_2S              2000 
+#define PERIODO_3S              3000
 /*=====[Definitions of private global variables]=============================*/
-static bool_t flag_tecla[FLAGS_QTY] = {true};
+
+static uint16_t times[DEMORAS_QTY] = {PERIODO_1S, PERIODO_500MS, PERIODO_2S, PERIODO_3S};
+static gpioMap_t secuencia1[] = {LEDB,LED1,LED2,LED3};
+static gpioMap_t secuencia2[] = {LED3,LED2,LED1,LEDB};
 
 bool leerTecla(gpioMap_t tecla) {
    bool_t tecla_apretada = false;
@@ -21,7 +29,8 @@ bool leerTecla(gpioMap_t tecla) {
    return tecla_apretada;
 }
 
-gpioMap_t TeclaValida(void) {
+gpioMap_t teclaValida(void) {
+   static bool_t flag_tecla[FLAGS_QTY] = {true};
 	gpioMap_t tecla = 0;
    if (leerTecla(TEC1)) { // Sentido de secuencia 1 (INCREMENTAL)
       if (flag_tecla[CAMBIAR_SECUENCIA]) {
@@ -40,4 +49,19 @@ gpioMap_t TeclaValida(void) {
       flag_tecla[CAMBIAR_SECUENCIA] = true;
    }
    return tecla;
+}
+
+void interpretarTecla(void) {
+   gpioMap_t tecla = teclaValida();
+   if (tecla == TEC1) {
+      configurarSecuencia(secuencia1,times,sizeof(secuencia1)/sizeof(secuencia1[0]));
+   }
+   else if (tecla == TEC4) {
+      configurarSecuencia(secuencia2,times,sizeof(secuencia2)/sizeof(secuencia2[0]));
+   }
+   activarSecuencia();
+}
+
+void condicionInicial(void) {
+   configurarSecuencia(secuencia1,times,sizeof(secuencia1)/sizeof(secuencia1[0]));
 }

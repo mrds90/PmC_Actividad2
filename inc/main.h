@@ -29,18 +29,7 @@ extern "C" {
 /*=====[Definitions of public data types]====================================*/
 
 
-/**
- * @brief Indice del vector que tiene los tiempos de demora.
- * 
- */
-typedef enum {
-   D1S,
-   D500MS,
-   D2S,
-   D3S,
 
-   DEMORAS_QTY
-} demoras_t;
 /*=====[C++ - end]===========================================================*/
 
 #ifdef __cplusplus

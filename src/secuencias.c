@@ -31,15 +31,24 @@ static void incrementarSecuencia(void) {
 }
 
 void configurarSecuencia(gpioMap_t psecuencia[], uint16_t tiempo_destello[], uint8_t tamanio_secuencia) {
-   secuencia.ptrLed = &psecuencia[0];
-   secuencia.ptrTiempo = &tiempo_destello[0];
+   uint8_t i;
+   for (i = 0;i < tamanio_secuencia; i++) {
+      if (*secuencia.ptrLed == psecuencia[i]) {
+         break;
+      }
+   } 
+   if (i < tamanio_secuencia) {
+      secuencia.ptrLed = &psecuencia[i];
+      secuencia.ptrTiempo = &tiempo_destello[i];
+   }
+   else {
+      secuencia.ptrLed = &psecuencia[0];
+      secuencia.ptrTiempo = &tiempo_destello[0];
+   }
+   
    secuencia.ptrPrimerLed = &psecuencia[0];
    secuencia.ptrPrimerTiempo = &tiempo_destello[0];
-   // uint8_t i;
-   // for (i = 0; i<tamanio_secuencia ; i++) {
-   //    psecuencia++;
-   //    tiempo_destello++;
-   // }
+
    secuencia.ptrUltimoLed = &psecuencia[tamanio_secuencia];
    secuencia.ptrUltimoTiempo = &tiempo_destello[tamanio_secuencia];
 
