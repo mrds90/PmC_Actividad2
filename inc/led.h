@@ -40,7 +40,7 @@ bool_t encenderLedUnico(gpioMap_t led);
  * 
  * @return bool_t 
  */
-bool_t apagarLeds(void)
+bool_t apagarLeds(void);
 /*=====[Prototypes (declarations) of public interrupt functions]=============*/
 
 /*=====[C++ - end]===========================================================*/

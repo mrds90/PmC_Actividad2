@@ -6,7 +6,7 @@
 
 /*=====[Inclusions of function dependencies]=================================*/
 
-#include "secuencias.h"
+#include "../inc/secuencias.h"
 #include "led.h"
 
 /*=====[Definition macros of private constants]==============================*/

@@ -32,7 +32,7 @@ int main(void)
 	boardInit();
 	configurarSecuencia(secuencia1,times,sizeof(secuencia1)/sizeof(secuencia1[0]));
    // ----- Loop infinito -------------------------
-   while(true) {
+    while(true) {
 		static bool_t flag_tecla[FLAGS_QTY] = {true};
 		if (leerTecla(TEC1)) { // Sentido de secuencia 1 (INCREMENTAL)
 			if (flag_tecla[CAMBIAR_SECUENCIA]) {
@@ -44,13 +44,14 @@ int main(void)
 			if (flag_tecla[CAMBIAR_SECUENCIA]) {
 				flag_tecla[CAMBIAR_SECUENCIA] = false;
 				configurarSecuencia(secuencia2,times,sizeof(secuencia2)/sizeof(secuencia2[0]));
-   	   }
-	   }
-   	else {
+   	    	}
+	    }
+   		else {
       	/*habilitar el cambio próximo cuando se suelta la tecla*/
-   	   flag_tecla[CAMBIAR_SECUENCIA] = true;
-	   }
-				activarSecuencia();
+   	   		flag_tecla[CAMBIAR_SECUENCIA] = true;
+	   	}
+		
+		activarSecuencia();
    }
 	// Nunca se alcanza este punto debido al ciclo infinito del while(true)
    return 0;
