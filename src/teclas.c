@@ -24,22 +24,35 @@ static bool leerTecla(gpioMap_t tecla);
  */
 static gpioMap_t teclaValida(void);
 /**
- * @brief Interpretar Tecla evalua cual es la tecla presionada y configura la secuencia.
+ * @brief semaforo func gestiona el modo semáforo
  * 
  */
-
+static void semaforoFunc(void);
+/**
+ * @brief inicializa los delay de la secuencia original
+ * 
+ */
+static void initSecuencia (void);
 /*=====[Definition macros of private constants]==============================*/
 #define PERIODO_1S              1000 
 #define PERIODO_500MS           500 
 #define PERIODO_2S              2000 
 #define PERIODO_3S              3000
+#define LED_OFF                 0
+
+
 
 
 /*=====[Definitions of private global variables]=============================*/
-
+static const uint8_t LED_VERDE     = LED3;
+static const uint8_t LED_ROJO      = LED2;
+static const uint8_t LED_AMARILLO  = LED1;
 static uint16_t times[DEMORAS_QTY] = {PERIODO_1S, PERIODO_500MS, PERIODO_2S, PERIODO_3S};
 static gpioMap_t secuencia1[] = {LEDB,LED1,LED2,LED3};
 static gpioMap_t secuencia2[] = {LED3,LED2,LED1,LEDB};
+static gpioMap_t secuencia3[] = {LED_ROJO,LED_AMARILLO,LED_VERDE};
+static gpioMap_t secuencia4[] = {LED_AMARILLO,LED_OFF};
+static gpioMap_t secuencia5[] = {LED_ROJO,LED_OFF};
 
 
 
@@ -54,36 +67,86 @@ static bool leerTecla(gpioMap_t tecla) {
 static gpioMap_t teclaValida(void) {
    static bool_t flag_tecla[FLAGS_QTY] = {true};
 	gpioMap_t tecla = 0;
-   if (leerTecla(TEC1)) { // Sentido de secuencia 1 (INCREMENTAL)
-      if (flag_tecla[CAMBIAR_SECUENCIA]) {
-         flag_tecla[CAMBIAR_SECUENCIA] = false;
-         tecla = TEC1;
+   bool tecla_presionada = false;
+
+   for (tecla = TEC1 ; tecla <= TEC4 ; tecla++) {
+      if (leerTecla(tecla)) { 
+         tecla_presionada = true;
+         if (flag_tecla[CAMBIAR_SECUENCIA]) {
+            flag_tecla[CAMBIAR_SECUENCIA] = false;
+            break;
+         }
       }
+
    }
-   else if (leerTecla(TEC4)) { // Sentido de secuencia 2 (DECREMENTAL)
-      if (flag_tecla[CAMBIAR_SECUENCIA]) {
-         flag_tecla[CAMBIAR_SECUENCIA] = false;
-         tecla = TEC4;
+   if (tecla > TEC4) {
+      tecla = 0;
+      if(!tecla_presionada) {
+         flag_tecla[CAMBIAR_SECUENCIA] = true;
       }
-   }
-   else {
-      /*habilitar el cambio próximo cuando se suelta la tecla*/
-      flag_tecla[CAMBIAR_SECUENCIA] = true;
    }
    return tecla;
 }
 
 void interpretarTecla(void) {
    gpioMap_t tecla = teclaValida();
-   if (tecla == TEC1) {
+   switch (tecla) {
+   case TEC1:
+      initSecuencia();
       configurarSecuencia(secuencia1,times,sizeof(secuencia1)/sizeof(secuencia1[0]));
-   }
-   else if (tecla == TEC4) {
+      break;
+   case TEC2:
+      semaforoFunc();
+      break;
+   case TEC3:
+      break;      
+   case TEC4:
+      initSecuencia();
       configurarSecuencia(secuencia2,times,sizeof(secuencia2)/sizeof(secuencia2[0]));
+      break;
+   default:
+      break;
    }
+   
    activarSecuencia();
 }
 
 void condicionInicial(void) {
    configurarSecuencia(secuencia1,times,sizeof(secuencia1)/sizeof(secuencia1[0]));
+}
+
+static void semaforoFunc(void) {
+   static uint8_t modo = 0;
+
+   switch (modo) {
+      case NORMAL:
+         times[0] =  PERIODO_3S;    
+         times[1] =  PERIODO_500MS;
+         times[2] =  PERIODO_1S;
+         configurarSecuencia(secuencia3,times,sizeof(secuencia3)/sizeof(secuencia3[0]));
+         break;
+      case DESCONECTADO:
+         times[0] =  PERIODO_500MS;    
+         times[1] =  PERIODO_500MS;
+         configurarSecuencia(secuencia4,times,sizeof(secuencia4)/sizeof(secuencia4[0]));
+         break;
+      case ALARMA:
+         times[0] =  PERIODO_1S;    
+         times[1] =  PERIODO_1S;
+         configurarSecuencia(secuencia5,times,sizeof(secuencia5)/sizeof(secuencia5[0]));
+         break;
+      default:
+         break;
+   }
+   modo++;
+   if (modo == MODOS_QTY) {
+      modo = 0;
+   }
+}
+
+static void initSecuencia (void) {
+   times[0] = PERIODO_1S;
+   times[1] =  PERIODO_500MS;
+   times[2] =  PERIODO_2S;
+   times[3] =  PERIODO_3S;
 }

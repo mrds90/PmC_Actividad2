@@ -53,6 +53,18 @@ typedef enum {
 
    DEMORAS_QTY
 } demoras_t;
+
+/**
+ * @brief Modos del semáforo.
+ * 
+ */
+typedef enum {
+   NORMAL,
+   DESCONECTADO,
+   ALARMA,
+
+   MODOS_QTY
+} modos_t;
 /*=====[Prototypes (declarations) of public functions]=======================*/
 
 /*=====[Prototypes (declarations) of public interrupt functions]=============*/
