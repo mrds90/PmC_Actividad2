@@ -7,14 +7,7 @@
 /*=====[Inclusions of function dependencies]=================================*/
 
 #include "../inc/main.h"
-#include "teclas.h"
-/*=====[Definition macros of private constants]==============================*/
-
-/*=====[Definitions of extern global variables]==============================*/
-
-/*=====[Definitions of public global variables]==============================*/
-
-/*=====[Definitions of private global variables]=============================*/
+#include "../inc/teclas.h"
 
 /*=====[Main function, program entry point after power on or reset]==========*/
 

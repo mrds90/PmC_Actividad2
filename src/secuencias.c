@@ -9,19 +9,15 @@
 #include "../inc/secuencias.h"
 #include "led.h"
 
+/*=====[Definitions of private functions]====================================*/
 static void incrementarSecuencia(void);
-
-/*=====[Definition macros of private constants]==============================*/
-
-/*=====[Definitions of extern global variables]==============================*/
-
-/*=====[Definitions of public global variables]==============================*/
 
 /*=====[Definitions of private global variables]=============================*/
 
 static delay_t delayLeds;
 static control_secuencia_t secuencia;
-/*=====[Fuctions]============================================================*/
+
+/*=====[Implementation of private functions]====================================*/
 
 static void incrementarSecuencia(void) {
 	secuencia.ptrLed++;
@@ -31,7 +27,7 @@ static void incrementarSecuencia(void) {
       secuencia.ptrTiempo = secuencia.ptrPrimerTiempo;
 	}
 }
-
+/*=====[Implementation of public functions]==================================*/
 void configurarSecuencia(gpioMap_t psecuencia[], uint16_t tiempo_destello[], uint8_t tamanio_secuencia) {
    uint8_t i;
    for (i = 0;i < tamanio_secuencia; i++) {

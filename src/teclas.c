@@ -10,6 +10,7 @@
 #include "sapi.h"
 #include "secuencias.h"
 
+/*=====[Definitions of private functions]====================================*/
 /**
  * @brief leo el estado de la tecla
  * 
@@ -41,8 +42,6 @@ static void initSecuencia (void);
 #define LED_OFF                 0
 
 
-
-
 /*=====[Definitions of private global variables]=============================*/
 static const uint8_t LED_VERDE     = LED3;
 static const uint8_t LED_ROJO      = LED2;
@@ -55,7 +54,7 @@ static gpioMap_t secuencia4[] = {LED_AMARILLO,LED_OFF};
 static gpioMap_t secuencia5[] = {LED_ROJO,LED_OFF};
 
 
-
+/*=====[Implematation of private functions]==================================*/
 static bool leerTecla(gpioMap_t tecla) {
    bool_t tecla_apretada = false;
    if (tecla >= TEC1 && tecla <= TEC4) {
@@ -86,33 +85,6 @@ static gpioMap_t teclaValida(void) {
       }
    }
    return tecla;
-}
-
-void interpretarTecla(void) {
-   gpioMap_t tecla = teclaValida();
-   switch (tecla) {
-   case TEC1:
-      initSecuencia();
-      configurarSecuencia(secuencia1,times,sizeof(secuencia1)/sizeof(secuencia1[0]));
-      break;
-   case TEC2:
-      semaforoFunc();
-      break;
-   case TEC3:
-      break;      
-   case TEC4:
-      initSecuencia();
-      configurarSecuencia(secuencia2,times,sizeof(secuencia2)/sizeof(secuencia2[0]));
-      break;
-   default:
-      break;
-   }
-   
-   activarSecuencia();
-}
-
-void condicionInicial(void) {
-   configurarSecuencia(secuencia1,times,sizeof(secuencia1)/sizeof(secuencia1[0]));
 }
 
 static void semaforoFunc(void) {
@@ -149,4 +121,33 @@ static void initSecuencia (void) {
    times[1] =  PERIODO_500MS;
    times[2] =  PERIODO_2S;
    times[3] =  PERIODO_3S;
+
+}
+/*=====[Implemetation of public functions]====================================*/
+
+void interpretarTecla(void) {
+   gpioMap_t tecla = teclaValida();
+   switch (tecla) {
+   case TEC1:
+      initSecuencia();
+      configurarSecuencia(secuencia1,times,sizeof(secuencia1)/sizeof(secuencia1[0]));
+      break;
+   case TEC2:
+      semaforoFunc();
+      break;
+   case TEC3:
+      break;      
+   case TEC4:
+      initSecuencia();
+      configurarSecuencia(secuencia2,times,sizeof(secuencia2)/sizeof(secuencia2[0]));
+      break;
+   default:
+      break;
+   }
+   
+   activarSecuencia();
+}
+
+void condicionInicial(void) {
+   configurarSecuencia(secuencia1,times,sizeof(secuencia1)/sizeof(secuencia1[0]));
 }

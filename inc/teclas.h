@@ -22,7 +22,10 @@
 extern "C" {
 #endif
 
-
+/**
+ * @brief Configura las seuecnias segun la tecla presionada
+ * 
+ */
 void interpretarTecla(void);
 /**
  * @brief Configura la secuencia inicial con sus delays
