@@ -60,11 +60,11 @@ git clone https://github.com/mrds90/PmC_Actividad2.git
 make select_program
 ```
 * Elegir la carpeta del repositorio descargado (PmC_Actividad2)
-* Compilar el programa el programa en la misma terminal con:
+* Compilar el programa en la misma terminal con:
 ```
 make all
 ```
-##  Descargar programa en edu_cia_nxp
+##  Descargar programa en edu_ciaa_nxp
 
 * En la misma terminal y con la edu_ciaa_nxp conectada escribir
 
