@@ -88,7 +88,7 @@ static gpioMap_t teclaValida(void) {
 }
 
 static void semaforoFunc(void) {
-   static uint8_t modo = 0;
+   static modos_t modo = 0;
 
    switch (modo) {
       case NORMAL:

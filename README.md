@@ -6,7 +6,7 @@ Modularizar en funciones, archivos y capas, un proyecto de controlador de leds. 
 ## Descripción
 
 Utiliza la lectura de las teclas para tomar decisiones.
-El comportamiento del firmware está definido por la siguiente tabla de verdad
+El comportamiento del firmware está definido por la siguiente tabla
 
 | Tecla  |           Resultado             |
 |--------|---------------------------------|
@@ -19,7 +19,7 @@ El comportamiento del firmware está definido por la siguiente tabla de verdad
 
 * Utiliza la librería sapi.h de firmware v3
 
-El firmware tiene 4 capas dividio en 4 archivos .h y .c.
+El firmware tiene 4 capas implementadas mediante 4 archivos .h y .c.
 
 Las capas, en orden decremental son:
 * Main
@@ -81,3 +81,4 @@ Marcos Dominguez
 [@mrds90](https://github.com/mrds90)
 
 Mario Aguilar
+[@mario739](https://github.com/mario739)
