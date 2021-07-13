@@ -64,15 +64,15 @@ static bool leerTecla(gpioMap_t tecla) {
 }
 
 static gpioMap_t teclaValida(void) {
-   static bool_t flag_tecla[FLAGS_QTY] = {true};
+   static bool_t flag_tecla = {true};
 	gpioMap_t tecla = 0;
    bool tecla_presionada = false;
 
    for (tecla = TEC1 ; tecla <= TEC4 ; tecla++) {
       if (leerTecla(tecla)) { 
          tecla_presionada = true;
-         if (flag_tecla[CAMBIAR_SECUENCIA]) {
-            flag_tecla[CAMBIAR_SECUENCIA] = false;
+         if (flag_tecla) {
+            flag_tecla = false;
             break;
          }
       }
@@ -80,8 +80,8 @@ static gpioMap_t teclaValida(void) {
    }
    if (tecla > TEC4) {
       tecla = 0;
-      if(!tecla_presionada) {
-         flag_tecla[CAMBIAR_SECUENCIA] = true;
+      if(!tecla_presionada) { //habilito el flag si ninuna tecla sigue presionada
+         flag_tecla = true;
       }
    }
    return tecla;

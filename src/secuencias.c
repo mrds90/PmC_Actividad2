@@ -51,6 +51,8 @@ void configurarSecuencia(gpioMap_t psecuencia[], uint16_t tiempo_destello[], uin
    secuencia.ptrUltimoLed = &psecuencia[tamanio_secuencia];
    secuencia.ptrUltimoTiempo = &tiempo_destello[tamanio_secuencia];
 
+   incrementarSecuencia();
+   encenderLedUnico(*secuencia.ptrLed);
 }
 
 void activarSecuencia(void) {

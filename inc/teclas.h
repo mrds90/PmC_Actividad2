@@ -34,17 +34,6 @@ void interpretarTecla(void);
 void condicionInicial(void);
 /*=====[Definitions of public data types]====================================*/
 /**
- * @brief Indice de flags que habilitan las teclas
- * 
- */
-typedef enum {
-   CAMBIAR_SECUENCIA,
-   CAMBIAR_VELOCIDAD,
-
-   FLAGS_QTY
-} flag_tecla_t;
-
-/**
  * @brief Indice del vector que tiene los tiempos de demora.
  * 
  */

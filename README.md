@@ -15,6 +15,13 @@ El comportamiento del firmware está definido por la siguiente tabla
 |  TEC3  |                -                |
 |  TEC4  |       Sentido decremental       |
 
+Las teclas TEC1 y TEC2 tambien aceleran la conmutación del led (ignorando el delay) si se presionan nuevamente. Es decir, que por cada vez que aprete TEC1 de forma consecutiva se conmutara un LED en sentido incremental (sin importar los delay seteados).
+
+Este comportamiento se puede eliminar si se remueven las ultimas dos lienas de la función `configurarSecuencia`:
+```
+   incrementarSecuencia();
+   encenderLedUnico(*secuencia.ptrLed);
+```
 ## Dependencias
 
 * Utiliza la librería sapi.h de firmware v3
